@@ -137,16 +137,14 @@ end
 def player_numbers(name_of_team)
   numbers = []
   game_hash.each do |building, team|
-    next unless team[:team_name] == name_of_team
-    team.each do |data, value|
-      next unless data == :players
-      value.each do |nums|
-        numbers << nums[:number]
-    end 
+    if team[:team_name] == name_of_team
+      team[:players].each do |values|
+      numbers << values[:number]
     end
   end
   numbers
 end
+
 
 def player_stats(name)
   stats_hash = {}
