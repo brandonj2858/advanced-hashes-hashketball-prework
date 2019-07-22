@@ -114,15 +114,12 @@ def num_points_scored(name)
 
 def shoe_size(name)
   game_hash.each do |building, team|
-    team.each do |attributes, data|
-      next unless attributes == :players
-      data.each do |values|
+    team[:players].each do |values|
         return values[:shoe] if 
         values[:player_name] == name
       end
     end
   end
-end
 
 def team_colors(name_of_team)
   game_hash.each do |building, team|
