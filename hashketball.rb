@@ -192,7 +192,7 @@ def most_points_scored
 end
 
 def winning_team
-  total_points = 0
+  winning_points = 0
   winning_team = nil
   game_hash.each do |building, team|
     team_points = 0
@@ -200,7 +200,7 @@ def winning_team
     team[:players].each do |statistic|
       team_points += statistic[:points]
       end
-    winning_team, total_points = team_name, team_points if team_points > total_points
+    winning_team, winning_points = team_name, team_points if team_points > total_points
   end
   return winning_team
 end
