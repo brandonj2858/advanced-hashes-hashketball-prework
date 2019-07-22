@@ -200,7 +200,7 @@ def winning_team
     team[:players].each do |statistic|
       team_points += statistic[:points]
       end
-    winning_team, winning_points = team_name, team_points if team_points > total_points
+    winning_team, winning_points = team_name, team_points if team_points > winning_points
   end
   return winning_team
 end
