@@ -144,7 +144,7 @@ def player_numbers(name_of_team)
   end
   numbers
 end
-
+end
 
 def player_stats(name)
   stats_hash = {}
