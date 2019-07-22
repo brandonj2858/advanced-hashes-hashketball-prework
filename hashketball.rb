@@ -197,8 +197,8 @@ def winning_team
   game_hash.each do |building, team|
     team_points = 0
     team_name = game_hash[building][:team_name]
-    team[:players].each do |name|
-      team_points += name[:points]
+    team[:players].each do |statistic|
+      team_points += statistic[:points]
       end
     winning_team, total_points = team_name, team_points if team_points > total_points
   end
